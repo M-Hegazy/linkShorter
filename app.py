@@ -9,6 +9,11 @@ app = Flask(__name__, template_folder='templates')
 def update_slug(slug):
     return update_record(slug, request.json)
 
+@app.route('/', methods=['get'])
+def HEllo():
+    return jsonify('hello')
+
+
 
 @app.route('/shortlinks', methods=['GET', 'POST'])
 def short_link():
