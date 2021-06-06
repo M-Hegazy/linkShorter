@@ -5,6 +5,18 @@ import string
 import random
 import re
 
+def single_link(slug):
+    response = {
+        "message": "we don't have that slug yet ",
+        "slug": slug,
+        "status": "faild"
+    }
+    data = slug_in_request(slug)
+    if data:
+        return json.loads(json_util.dumps(data))
+    else:
+        return jsonify(response)
+
 
 def list_short_links():
     getlinks = db.links.find()
