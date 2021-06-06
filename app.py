@@ -10,11 +10,10 @@ CORS(app)
 def update_slug(slug):
     return update_record(slug, request.json)
 
-@app.route('/', methods=['get'])
-def HEllo():
-    return jsonify('hello')
 
-
+@app.route('/', methods=['GET'])
+def get_single_route():
+    return single_link()
 
 @app.route('/shortlinks', methods=['GET', 'POST'])
 def short_link():
