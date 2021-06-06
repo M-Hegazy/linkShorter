@@ -1,8 +1,9 @@
 from flask import Flask, request, jsonify
-
+from flask_cors import CORS
 from controller import *
 
 app = Flask(__name__, template_folder='templates')
+CORS(app)
 
 
 @app.route('/shortlinks/<slug>', methods=['PUT'])
