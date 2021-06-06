@@ -12,7 +12,7 @@ def update_slug(slug):
 
 
 @app.route('/', methods=['GET'])
-def get_single_route():
+def get_single_route(request.json):
     return single_link()
 
 @app.route('/shortlinks', methods=['GET', 'POST'])
